@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: docker-installations "${{ matrix.os}}"
-        run: apt-get update && apt-get install docker.io
+        run: sudo apt-get update && sudo apt-get install docker.io
       - name: verify installation "${{matrix.os}}"
         run: docker --version
+      - name: adding the ubuntu user to docker
+        run: sudo usermod -aG docker $USER
