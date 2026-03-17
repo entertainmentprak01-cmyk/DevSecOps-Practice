@@ -1,4 +1,5 @@
-name: docker-installations in Multi-OS
+name: Docker Installation Multi OS
+
 on:
   workflow_dispatch:
 
@@ -7,12 +8,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ["ubuntu-latest"]
-    runs-on: "${{ matrix.os}}"
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
-      - name: docker-installations "${{ matrix.os}}"
-        run: sudo apt update && sudo apt install -y docker.io
-      - name: verify installation "${{matrix.os}}"
+      - name: Check Docker version
         run: docker --version
-      - name: adding the ubuntu user to docker
-        run: sudo usermod -aG docker $USER
+
+      - name: Run hello-world container
+        run: docker run hello-world
