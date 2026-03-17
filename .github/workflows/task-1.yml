@@ -26,5 +26,5 @@ jobs:
         run: uname -a
 
       - name: test command
-        run: I love you
+        run: echo "I love you"
         
