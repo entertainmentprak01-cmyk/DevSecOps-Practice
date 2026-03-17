@@ -1,0 +1,6 @@
+name: manual-trigger
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+      
