@@ -1,4 +1,4 @@
-name: hello
+name: task-1
 on:
   push:
     branches: [main]
@@ -12,3 +12,15 @@ jobs:
 
       - name: Hello from GitHub Actions
         run: echo "Hello from GitHub Actions"
+
+      - name: current date & timeout
+        run: date
+
+      - name: prints the branch name which triggered pipeline
+        run: ${{ github.ref_name }}
+
+      - name: List the files in the repo
+        run: ls -la
+
+      - name: Print the runner's operating system
+        run: uname -a
