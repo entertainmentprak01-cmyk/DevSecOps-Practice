@@ -17,7 +17,7 @@ jobs:
         run: date
 
       - name: prints the branch name which triggered pipeline
-        run: ${{ github.ref_name }}
+        run: echo "${{ github.ref_name }}"
 
       - name: List the files in the repo
         run: ls -la
