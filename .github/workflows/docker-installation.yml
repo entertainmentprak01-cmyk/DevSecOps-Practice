@@ -1,0 +1,15 @@
+name: docker-installations in Multi-OS
+on:
+  workflow_dispatch:
+
+jobs:
+  docker-installations:
+    strategy:
+      matrix:
+        os: ["ubuntu-latest", "macos-latest", "windows-latest"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: docker-installations "${{ matrix.os}}"
+        run: apt-get update && apt-get install docker.io
+      - name: verify installation "${{matrix.os}}"
+        run: docker --version
