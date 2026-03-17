@@ -7,11 +7,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ["ubuntu-latest", "macos-latest", "windows-latest"]
+        os: ["ubuntu-latest"]
     runs-on: ubuntu-latest
     steps:
       - name: docker-installations "${{ matrix.os}}"
-        run: sudo apt-get update && sudo apt-get install docker
+        run: sudo apt update && sudo apt install docker.io
       - name: verify installation "${{matrix.os}}"
         run: docker --version
       - name: adding the ubuntu user to docker
