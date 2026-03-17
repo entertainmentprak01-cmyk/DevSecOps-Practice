@@ -1,0 +1,14 @@
+# workflow_name
+name: hello
+on: 
+  workflow_dispatch:
+
+# name of the Job
+jobs:
+  hello-file:
+    runs-on: ubuntu-latest
+    # name of the step
+    steps:
+      - name: hello from user
+        run: echo "Hello from $USER"
+        
