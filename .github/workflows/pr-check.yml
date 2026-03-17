@@ -1,0 +1,12 @@
+name: Pull Request trigger
+on: 
+  pull_request:
+    branches: [main]
+    types: [opened, reopened, synchronize]
+
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prints base branch
+        run: echo "${{github.head_ref}}
