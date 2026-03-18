@@ -6,7 +6,7 @@ jobs:
   set-date:
     runs-on: self-hosted
     outputs:
-       today: ${{ steps.get_date.outputs.today }}
+       date: ${{ steps.get_date.outputs.today }}
     steps:
       - name: Set today's date as output
         id: get_date
@@ -17,4 +17,4 @@ jobs:
     needs: set-date
     steps:
       - name: printing the output
-        run: echo ${{ needs.set-date.outputs.today }}
+        run: echo ${{ needs.set-date.outputs.date }}
