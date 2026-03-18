@@ -1,0 +1,17 @@
+name: self-hosted runner
+on: 
+  workflow_dispatch: 
+
+jobs:
+  self-runner-jobs:
+    runs-on: self-hosted
+    steps:
+      - name: jobs runner
+        run: hostname -I && pwd
+      - name: create a file & verify the file exists
+        run: touch test.txt
+      - name: enter a message
+        run: hello, this file is for testing purpose | text.txt
+      - name: verify the file exists
+        run: cat test.txt
+  
