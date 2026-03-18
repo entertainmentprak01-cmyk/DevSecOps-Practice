@@ -7,14 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: OS name
-        run: uname -a && hostname && $USER
+        run: uname -a && hostname && whoami
   windows-jobs:
     runs-on:  windows-latest
     steps:
       - name: OS name
-        run: uname -a && hostname && $USER
+        shell: powershell
+        run: |
+          Write-Host "OS: Windows"
+          hostname
+          whoami
   macos-jobs:
     runs-on: macos-latest
-    steps:
+    steps: 
       - name: OS name
-        run: uname -a && hostname && $USER
+        run: uname -a && hostname && whoami
