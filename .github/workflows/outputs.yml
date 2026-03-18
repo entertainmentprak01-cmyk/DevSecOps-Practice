@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Set today's date as output
         id: get_date
-        run: echo "date=$(date)" >> $GITHUB_OUTPUT
+        run: echo "today=$(date)" >> $GITHUB_OUTPUT
 
   prints-output:
     runs-on: self-hosted
