@@ -4,7 +4,7 @@ on:
 
 jobs:
   self-runner-jobs:
-    runs-on: [self-hosted, my-self-hosted-runner]
+    runs-on: [self-hosted, my-self-hosted-runner,my-self-hosted-runner]
     steps:
       - name: jobs runner
         run: hostname -I && pwd
