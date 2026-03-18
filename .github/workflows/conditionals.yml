@@ -1,0 +1,11 @@
+name: conditionals
+on:
+  workflow_dispatch:
+
+jobs:
+  conditionals:
+    runs-on: self-hosted
+    steps:
+      - name: runs only when the branch is "main"
+        run: 
+        if: github.head_ref == 'refs/head/main'
