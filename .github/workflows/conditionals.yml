@@ -12,3 +12,6 @@ jobs:
       - name: runs only on if the previous step failed
         run: 
         if: failure()
+      - name: A job that only runs on push events, not on pull requests
+        run: 
+        if:  github.event_name == 'push'
