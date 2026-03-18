@@ -8,4 +8,7 @@ jobs:
     steps:
       - name: runs only when the branch is "main"
         run: 
-        if: github.head_ref == 'refs/head/main'
+        if: github.head_ref == 'refs/head/practice'
+      - name: runs only on if the previous step failed
+        run: 
+        if: failure()
