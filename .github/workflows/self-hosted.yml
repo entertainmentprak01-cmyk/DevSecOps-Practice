@@ -13,5 +13,5 @@ jobs:
       - name: enter a message
         run: echo "hello, this file is for testing purpose" > hello.txt
       - name: verify the file exists
-        run: cat hello.txt
+        run: cat hello.txt && echo "file found & it does exists"
   
