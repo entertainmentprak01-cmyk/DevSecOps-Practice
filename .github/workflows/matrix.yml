@@ -20,4 +20,4 @@ jobs:
           python-version: ${{matrix.python-version}}
 
       - name: version of installed python
-        run: echo "python --version"
+        run: python --version
