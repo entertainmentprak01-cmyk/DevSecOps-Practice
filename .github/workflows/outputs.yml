@@ -1,0 +1,20 @@
+name: output
+on:
+  workflow_dispatch:
+
+jobs:
+  set-date:
+    runs-on: self-hosted
+    outputs:
+       today: ${{ steps.get_date.outputs.today }}
+    steps:
+      - name: Set today's date as output
+        id: get_date
+        run: echo "date=$(date)" >> $GITHUB_OUTPUT
+
+  prints-output:
+    runs-on: self-hosted
+    needs: set-date
+    steps:
+      - name: printing the output
+        run: echo ${{ needs.set-date.outputs.today }}
