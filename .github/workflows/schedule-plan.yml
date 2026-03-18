@@ -1,0 +1,14 @@
+name: scheduled trigger
+on:
+  schedule:
+    - cron:  0 0 * * * 
+    - cron: 0 9 * * 1  
+
+jobs:
+  scheduled-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: scheduled trigger
+        run: echo "triggered successfully"
+
+        
