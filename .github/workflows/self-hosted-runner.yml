@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: OS name
         run: uname -a && hostname && whoami
+      - name: prints the dependency versions
+        run: docker --version && python --version && node --version && git --version
   windows-jobs:
     runs-on:  windows-latest
     steps:
