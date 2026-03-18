@@ -9,9 +9,9 @@ jobs:
       - name: jobs runner
         run: hostname -I && pwd
       - name: create a file & verify the file exists
-        run: touch test.txt
+        run: touch -f test.txt
       - name: enter a message
-        run: hello, this file is for testing purpose | text.txt
+        run: echo "hello, this file is for testing purpose" > text.txt
       - name: verify the file exists
         run: cat test.txt
   
