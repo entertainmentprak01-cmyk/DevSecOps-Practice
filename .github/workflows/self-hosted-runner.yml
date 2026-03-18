@@ -1,0 +1,20 @@
+name: multi-jobs
+on:  
+  workflow_dispatch:
+
+jobs:
+  ubuntu-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: OS name
+        run: uname -a && hostname && $USER
+  windows-jobs:
+    runs-on:  windows-latest
+    steps:
+      - name: OS name
+        run: uname -a && hostname && $USER
+  macos-jobs:
+    runs-on: macos-latest
+    steps:
+      - name: OS name
+        run: uname -a && hostname && $USER
